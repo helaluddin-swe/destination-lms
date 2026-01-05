@@ -6,6 +6,11 @@ import CourseDetails from './pages/student/CourseDetails'
 import Player from './pages/student/Player'
 import Loading from './components/student/Loading'
 import MyEnrollments from './pages/student/MyEnrollments'
+import Educator from './pages/educator/Educator'
+import Dashboard from './pages/educator/Dashboard'
+import AddCourse from './pages/educator/AddCourse'
+import StudentEnrollment from './pages/educator/StudentEnrollment'
+import MyCourse from './pages/educator/MyCourse'
 
 const App = () => {
   return (
@@ -18,6 +23,13 @@ const App = () => {
         <Route path="/player/:courseId" element={<Player/>}/>
         <Route path="/loading/:path" element={<Loading/>}/>
         <Route path="/my-enrollment" element={<MyEnrollments/>}/>
+        <Route path='/educator' element={<Educator/>}>
+          <Route path='educator' element={<Dashboard/>}/>
+          <Route path='add-course' element={<AddCourse/>}/>
+          <Route path='student-enrollmented' element={<StudentEnrollment/>}/>
+          <Route path='my-courses' element={<MyCourse/>}/>
+       
+        </Route>
       </Routes>
     </div>
   )
