@@ -1,9 +1,20 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/student/Home'
+import CourseList from './pages/student/CourseList'
+import CourseDetails from './pages/student/CourseDetails'
+import Player from './pages/student/Player'
 
 const App = () => {
   return (
     <div>
-      app
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/course-list" element={<CourseList/>}/>
+        <Route path="/course-list/:input" element={<CourseList/>}/>
+        <Route path="/course/:id" element={<CourseDetails/>}/>
+        <Route path="/player/:courseId" element={<Player/>}/>
+      </Routes>
     </div>
   )
 }
