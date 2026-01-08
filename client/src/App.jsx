@@ -16,19 +16,21 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/course-list" element={<CourseList/>}/>
-        <Route path="/course-list/:input" element={<CourseList/>}/>
-        <Route path="/course/:id" element={<CourseDetails/>}/>
-        <Route path="/player/:courseId" element={<Player/>}/>
-        <Route path="/loading/:path" element={<Loading/>}/>
-        <Route path="/my-enrollment" element={<MyEnrollments/>}/>
-        <Route path='/educator' element={<Educator/>}>
-          <Route path='educator' element={<Dashboard/>}/>
-          <Route path='add-course' element={<AddCourse/>}/>
-          <Route path='student-enrollmented' element={<StudentEnrollment/>}/>
-          <Route path='my-courses' element={<MyCourse/>}/>
-       
+        <Route path="/" element={<Home />} />
+        <Route path="/course-list" element={<CourseList />} />
+        <Route path="/course-list/:input" element={<CourseList />} />
+        <Route path="/course/:id" element={<CourseDetails />} />
+        <Route path="/player/:courseId" element={<Player />} />
+        <Route path="/loading/:path" element={<Loading />} />
+        <Route path="/my-enrollment" element={<MyEnrollments />} />
+
+        {/* educator */}
+        <Route path='/educator' element={<Educator />}>
+          <Route path='educator' element={<Dashboard />} />
+          <Route path='add-course' element={<AddCourse />} />
+          <Route path='student-enrollmented' element={<StudentEnrollment />} />
+          <Route path='my-courses' element={<MyCourse />} />
+
         </Route>
       </Routes>
     </div>
