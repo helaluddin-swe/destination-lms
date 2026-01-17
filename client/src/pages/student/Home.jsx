@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {  useState } from 'react'
 import Hero from '../../components/student/Hero'
+import SearchBar from '../../components/student/SearchBar'
 
 const Home = () => {
+  const [data,setData]=useState('')
   return (
-    <div>
+    <div className='items-center justify-center flex flex-col space-y-5'>
     <Hero/>
+    <SearchBar data={data}/>
     </div>
   )
 }
