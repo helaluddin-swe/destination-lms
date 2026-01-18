@@ -23,6 +23,7 @@ platform has made a difference in their lives.</p>
         <div className='flex gap-0.5'>{[...Array(5)].map((_,i)=>(<img className='h-4' src={i<Math.floor(testimonial.rating)? assets.star:assets.star_blank} alt='star' key={i}/>))} </div>
         <p className='mt-5 text-gray-500'>{testimonial.feedback}</p>
       </div>
+      <a href="#" className='text-blue-500 underline px-4'>Read More</a>
 
     </div>
   ))}
