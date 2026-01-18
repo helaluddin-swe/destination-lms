@@ -6,6 +6,7 @@ const AppContext = createContext()
 
 export const AppContextProvider = ({ children }) => {
   const [allCourse, setAllCourse] = useState([])
+  const [isEducator, setIsEducator] = useState(true)
 
   useEffect(() => {
     setAllCourse(dummyCourses)
@@ -28,7 +29,7 @@ export const AppContextProvider = ({ children }) => {
   const value = {
     currency,
     allCourse
-    ,navigate,calculateRating
+    ,navigate,calculateRating,isEducator,setIsEducator
   }
 
   return (
