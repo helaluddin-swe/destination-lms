@@ -12,7 +12,7 @@ const CourseSection = () => {
       <p className='text-sm text-gray-500 mb-4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus rerum quod autem, ut earum est ex illo odit nesciunt quos quis quisquam, aliquid eum aspernatur deserunt, sunt facere exercitationem assumenda!</p>
 
 
-      <div>{allCourse.slice(0,4).map((course,index)=>(
+      <div className='grid grid-cols-1 md:grid-cols-4 my-10 md:my-16 gap-4 px-4 md:px-0'>{allCourse.slice(0,4).map((course,index)=>(
         <CourseCard key={index} course={course}/>
       ))}</div>
       <Link to={"/course-list"} className='border-gray-500 text-gray-500/70 px-4 py-2 border mt-10 '>Show all Coures</Link>
