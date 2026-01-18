@@ -8,7 +8,7 @@ const Home = () => {
   
 
   return (
-    <div className='text-center items-center space-y-7 flex flex-col mb-10'>
+    <div className='text-center items-center  flex flex-col mb-10'>
     <Hero/>
     <Companies/>
     <CourseSection/>
