@@ -6,7 +6,8 @@ import SearchBar from './SearchBar'
 const Hero = () => {
  
   return (
-    <div className='flex flex-col justify-center items-center space-y-5 w-full pt-20 pb-12 bg-cyan-100/70'>
+    <div className='flex flex-col justify-center items-center space-y-5 w-full pt-20 pb-12  relative'>
+     < div className="absolute inset-0 w-full h-125 bg-linear-to-b from-cyan-100/70 to-transparent pointer-events-none" />
       <h1 className='text-4xl max-w-2xl  '>Empower your future with the courses designed to
       <span className='  text-cyan-500'> fit your choice.</span></h1>
       <img src={assets.sketch} alt="sketch" />

@@ -5,27 +5,29 @@ import { useAppContext } from '../../context/AppContext'
 import CourseCard from '../../components/student/CourseCard'
 import { useEffect, useState } from 'react'
 import { assets } from '../../assets/assets'
+import Footer from '../../components/student/Footer'
 
 const CourseList = () => {
   const { navigate, allCourse } = useAppContext()
   const { input } = useParams()
   const [filteredCourse, setFilteredCourse] = useState([])
- useEffect(() => {
-  if (!allCourse) return
+  useEffect(() => {
+    if (!allCourse) return
 
-  const query = input?.toLowerCase().trim()
+    const query = input?.toLowerCase().trim()
 
-  const filtered = query
-    ? allCourse.filter(item =>
+    const filtered = query
+      ? allCourse.filter(item =>
         item.courseTitle?.toLowerCase().includes(query)
       )
-    : allCourse
+      : allCourse
 
-  setFilteredCourse(filtered)
-}, [allCourse, input])
+    setFilteredCourse(filtered)
+  }, [allCourse, input])
 
 
   return (
+     <>
     <div className='relative px-10 md:px-36 pt-20 text-left'>
 
       <div className='flex flex-col w-full md:flex-row justify-between items-start gap-6'>
@@ -47,6 +49,8 @@ const CourseList = () => {
 
 
     </div>
+    <Footer/>
+  </>
   )
 }
 
