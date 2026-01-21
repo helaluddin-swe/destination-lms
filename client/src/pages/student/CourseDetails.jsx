@@ -4,6 +4,7 @@ import { useAppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
 import { assets } from '../../assets/assets'
 import Footer from '../../components/student/Footer'
+import humanizeDuration from 'humanize-duration'
 
 const CourseDetails = () => {
   const { id } = useParams()
@@ -66,13 +67,14 @@ const CourseDetails = () => {
         <div className="pt-8">
           <h2 className="text-2xl font-semibold">Course Structure</h2>
 
-          <div className="pt-5 space-y-4">
+          <div className="pt-5 space-y-4 w-auto">
             {courseData.courseContent.map((chapter, index) => (
               <div
                 key={index}
-                className="border rounded-lg p-4"
+                className="border rounded-lg border-gray-300 bg-white mb-2 w-auto"
               >
-                <div className="flex  gap-3 justify-between">
+                <div className='flex items-center justify-between gap-2 px-4 py-3 select-none cursor-pointer'> 
+                <div className="flex  gap-3 items-center">
                   <img
                     src={assets.down_arrow_icon}
                     alt="toggle"
@@ -81,10 +83,29 @@ const CourseDetails = () => {
                   <p className="font-medium">
                     {chapter.chapterTitle}
                   </p>
-                  <p className="text-sm text-gray-600 pt-2">
+                 
+                </div>
+                 <p className="text-sm text-gray-600 pt-2">
                   {(chapter.chapterContent?.length )} -lectures 
                   ---{calculateChapterDuration(chapter)}
                 </p>
+                </div>
+                <div className='max-h-96 duration-300 transition-all overflow-hidden '>
+                  <ul className='list-disc border-t md:pl-10 pl-4 py-4 pr-4 text-gray-600 border-gray-500'>
+                    {chapter.chapterContent.map((lecture,i)=>(
+                      <li key={i} className='flex items-start'>
+                        <img src={assets.play_icon} alt="play icon" className='h-4 w-4 mt-2' />
+                        <div className='flex  gap-4'>
+                          <p>{lecture.lectureTitle}</p>
+                          <div className='flex gap-4'>
+                            {lecture.isPreviewFree && <p>Preview</p>}
+                            <p>{humanizeDuration(lecture.lectureDuration*60*1000,{units:["h","m"]})}</p>
+                          </div>
+                        </div>
+
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 
