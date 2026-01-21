@@ -22,7 +22,7 @@ const CourseDetails = () => {
   useEffect(() => {
     fetchedCourse()
 
-  }, [])
+  }, [allCourse])
 
   const toggleSection = (index) => {
     setOpenSection((prev) => ({
@@ -193,7 +193,7 @@ const CourseDetails = () => {
    </>
 
   ) : (
-    <Loading />
+    <Loading/>
   );
 
 }
