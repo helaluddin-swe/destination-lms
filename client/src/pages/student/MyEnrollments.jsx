@@ -20,7 +20,7 @@ const MyEnrollments = () => {
   return (
     <> 
     <div className='px-4'>
-      <h1 className='font-semibold text-2xl  pt-10  px-4 py-1 underline'>My enrollment pages</h1>
+      <h1 className='font-semibold text-2xl  pt-10  px-4 py-1 underline'>My enrollment Courses</h1>
       <table className='w-full gap-4 justify-between items-center'>
         <thead className='pt-10 '>
           
@@ -47,8 +47,8 @@ const MyEnrollments = () => {
                 {totalCourseDuration(course)}
 
               </td>
-              <td className='px-3 py-3 max-sm:hidden items-center text-center '> 2/4 <span>Lecture</span></td>
-              <td className='px-3 py-3 text-center'> <button className='bg-blue-500  px-3 py-2 text-white font-semibold rounded' onClick={()=>navigate("/player/"+ course._id)}>{progressArray[index] && progressArray[index].lectureCompleted/progressArray[index].totalLecture===1? "Completed":"Ongoing"}</button></td>
+              <td className='px-3 py-3 max-sm:hidden items-center text-center '>{progressArray[index] && `${progressArray[index].lectureCompleted} / ${progressArray[index].totalLecture}`} <span>Lecture</span></td>
+              <td className='px-3 py-3 text-center'> <button className='bg-blue-500 cursor-pointer px-3 py-2 text-white font-semibold rounded' onClick={()=>navigate("/player/"+ course._id)}>{progressArray[index] && progressArray[index].lectureCompleted/progressArray[index].totalLecture===1? "Completed":"Ongoing"}</button></td>
 
             </tr>
           ))}
