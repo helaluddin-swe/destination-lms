@@ -94,7 +94,7 @@ const Player = () => {
             <div className='flex justify-between items-center md:mt-2'><p>
               {playerData.chapter}.{playerData.lecture} {playerData.lectureTitle}
               </p>
-              <button className='text-blue-500'> {false?"Completed":"Mark Complete"}</button></div>
+              <button className='text-blue-500'> {true?"Completed":"Mark Complete"}</button></div>
 
 
           </div>):<img src={courseData?courseData.courseThumbnail:''} alt="course data" /> }
